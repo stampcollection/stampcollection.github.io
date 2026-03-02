@@ -3,7 +3,7 @@ layout: default
 title: My Stamp Collection
 ---
 
-# My Stamp Collection
+<h1>My Stamp Collection</h1>
 
 {% assign stamps_countries = site.stamps | map: "country" %}
 
@@ -15,11 +15,12 @@ title: My Stamp Collection
 
   {% if first_letter != current_letter %}
     {% assign current_letter = first_letter %}
-    ## {{ first_letter }}
+    <h2>{{ first_letter }}</h2>
   {% endif %}
 
   {% if stamps_countries contains country %}
-    <a class="country-enabled" href="/countries/{{ country | downcase | replace: " ", "-" }}.html">
+    <a class="country-enabled"
+       href="/countries/{{ country | downcase | replace: ' ', '-' }}.html">
        {{ country }}
     </a>
   {% else %}
