@@ -1,6 +1,7 @@
 ---
 layout: default
 title: My Stamp Collection
+markdown: false
 ---
 
 <h1>My Stamp Collection</h1>
