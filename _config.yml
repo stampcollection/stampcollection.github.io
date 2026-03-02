@@ -1,0 +1,16 @@
+title: My Stamp Collection
+description: A digital stamp collection
+
+collections:
+  stamps:
+    output: true
+    permalink: /:collection/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: stamps
+    values:
+      layout: stamp
+
+markdown: kramdown
