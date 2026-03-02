@@ -26,3 +26,16 @@ header {
 .stamp-info {
   margin: 20px;
 }
+
+.country-disabled {
+  color: gray;
+}
+
+.country-enabled {
+  color: blue;
+  text-decoration: none;
+}
+
+.country-enabled:hover {
+  text-decoration: underline;
+}
