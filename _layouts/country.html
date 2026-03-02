@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<h1>{{ page.country_name }}</h1>
+
+<ul>
+  {% assign country_stamps = site.stamps | where: "country", page.country_name | sort: "year" %}
+  {% for stamp in country_stamps %}
+    <li>
+      <a href="{{ stamp.url }}">{{ stamp.year }} – {{ stamp.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
