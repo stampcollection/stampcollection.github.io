@@ -6,7 +6,15 @@ markdown: false
 
 <h1>My Stamp Collection</h1>
 
-{% assign stamps_countries_slugs = site.stamps | map: "country" | uniq | map: "slugify" %}
+
+{% assign stamps_countries_slugs = "" | split: "" %}
+{% for stamp in site.stamps %}
+  {% assign slug = stamp.country | slugify %}
+  {% unless stamps_countries_slugs contains slug %}
+    {% assign stamps_countries_slugs = stamps_countries_slugs | push: slug %}
+  {% endunless %}
+{% endfor %}
+
 {% assign current_letter = "" %}
 
 {% for country in site.data.countries %}
