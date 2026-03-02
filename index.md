@@ -5,16 +5,14 @@ title: My Stamp Collection
 
 <h1>My Stamp Collection</h1>
 
-{% assign current_letter = "" %}
-{% assign countries = site.stamps | map: "country" | uniq | sort %}
+{% assign stamps_countries = site.stamps | map: "country" | uniq %}
 
-{% for country in countries %}
-  {% assign first_letter = country | slice: 0 | upcase %}
-
-  {% if first_letter != current_letter %}
-    {% assign current_letter = first_letter %}
-    <h2>{{ current_letter }}</h2>
+{% for country in site.data.countries %}
+  {% if stamps_countries contains country %}
+    <!-- Country has at least one stamp → clickable -->
+    <a href="/countries/{{ country | slugify }}/">{{ country }}</a><br>
+  {% else %}
+    <!-- Country has no stamps → plain text -->
+    <span>{{ country }}</span><br>
   {% endif %}
-
-  <a href="/countries/{{ country | slugify }}/">{{ country }}</a><br>
 {% endfor %}
