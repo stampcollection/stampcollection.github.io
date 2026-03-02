@@ -5,5 +5,4 @@ year: 1950
 image: /images/france/example1.jpg
 layout: stamp
 ---
-
-This is an example stamp from France.
+This is a description of the stamp.
