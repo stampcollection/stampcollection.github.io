@@ -1,0 +1,24 @@
+---
+layout: default
+title: Sample Country
+---
+
+# Sample Country
+
+{% assign stamps = site.stamps | where: "country", "Sample Country" | sort: "year" %}
+
+{% for stamp in stamps %}
+  <div class="stamp-row">
+
+    <div class="stamp-image">
+      <img src="{{ stamp.image }}">
+    </div>
+
+    <div class="stamp-info">
+      <h2>{{ stamp.title }}</h2>
+      <p><strong>Year:</strong> {{ stamp.year }}</p>
+      <p>{{ stamp.content }}</p>
+    </div>
+
+  </div>
+{% endfor %}
