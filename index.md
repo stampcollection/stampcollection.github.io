@@ -20,8 +20,8 @@ title: My Stamp Collection
 
   {% if stamps_countries contains country %}
     <a class="country-enabled"
-       href="/countries/{{ country | downcase | replace: ' ', '-' }}.html">
-       {{ country }}
+      href="{{ '/countries/' | append: country | downcase | replace: ' ', '-' | append: '.html' | relative_url }}">
+      {{ country }}
     </a>
   {% else %}
     <span class="country-disabled">

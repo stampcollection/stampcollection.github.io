@@ -1,8 +1,9 @@
 ---
-title: Example Stamp
-country: Sample Country
-year: 1900
+title: "Example 1"
+country: "France"
+year: 1839
 image: /images/sample-country/sample.jpg
+layout: stamp
 ---
 
 This is an example stamp.
